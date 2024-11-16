@@ -1,0 +1,368 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #333;
+    color: #fff;
+}
+
+/* GENERAL */
+#gameContainer {
+    width: 100%;
+    max-width: 1200px;
+    min-width: 800px;
+    padding: 20px;
+    background-color: #222;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+}
+
+/* PANTALLA DE INICIO */
+#start-screen h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#start-screen button {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* THE ROAD (NAVEGACION) */
+#theRoad h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+#road-options button {
+    margin: 10px;
+    padding: 10px 15px;
+    font-size: 1em;
+    background-color: #ff9800;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#road-options button:hover {
+    background-color: #fb8c00;
+}
+
+/* COMBATE */
+#combatScreen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+#combatScreen.active {
+    display: flex;
+}
+
+#combatZone {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#playerSection, #enemySection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+}
+
+#playerPortrait img, #enemyPortrait img {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+#playerStats, #enemyStats {
+    font-size: 1.2em;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#battleCenter {
+    flex-grow: 1;
+    height: 100px;
+    border-bottom: 2px solid #ccc;
+}
+
+#playerHand {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    overflow-x: auto;
+    background-color: #444;
+    border-radius: 8px;
+}
+
+.side-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    color: #fff;
+    padding: 10px;
+    background-color: #444;
+    border-radius: 8px;
+    width: 120px;
+    text-align: center;
+}
+
+#graveyardDisplay {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#deckDisplay {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#enemyAction {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #ff0;
+    text-align: center;
+}
+
+#endTurnButton {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#endTurnButton button {
+    font-size: 1em;
+    padding: 10px 20px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#endTurnButton button:hover {
+    background-color: #fb8c00;
+}
+
+/* RECOMPENSA */
+#rewards-screen h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+#rewards-options button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #3f51b5;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#rewards-options button:hover {
+    background-color: #3949ab;
+}
+
+/* CAMPAMENTO */
+#camp-screen h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+#campScreen button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#campScreen button:hover {
+    background-color: #45a049;
+}
+
+/* TIENDA */
+#shop-items {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.shop-container .card {
+    cursor: pointer;
+    background-color: #FFD700;
+    color: black;
+}
+
+.shop-container .card:hover {
+    box-shadow: 0 0 10px #FFD700;
+}
+
+
+.card {
+    width: 120px;
+    height: 180px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.card-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+}
+
+.card-cost {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    text-align: right;
+}
+
+.card-image {
+    width: 100%;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin: 5px 0;
+}
+
+.card-description {
+    font-size: 12px;
+    color: #666;
+    text-align: left;
+    flex-grow: 1;
+}
+
+#campDeckDisplay {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px;
+    background-color: #222;
+    border-radius: 8px;
+}
+
+#campDeckDisplay .card {
+    flex-shrink: 0; 
+    width: 120px;
+    height: 180px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+#campDeckDisplay .card:hover {
+    transform: scale(1.05);
+    background-color: #e4e4e4;
+}
+
+#campDeckDisplay .card p {
+    font-size: 12px;
+    color: #333;
+    margin: 5px 0;
+}
+
+.side-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    color: #fff;
+    padding: 10px;
+    background-color: #444;
+    border-radius: 8px;
+    width: 120px;
+    text-align: center;
+}
+
+#graveyardDisplay {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#deckDisplay {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#enemyAction {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #ff0;
+    text-align: center;
+}
+
+#endTurnButton {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#endTurnButton button {
+    font-size: 1em;
+    padding: 10px 20px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#endTurnButton button:hover {
+    background-color: #fb8c00;
+}

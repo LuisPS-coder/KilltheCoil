@@ -14,7 +14,7 @@ const allCards = {
         'Recupera 3 puntos de vida.',
         null,
         (target) => {
-            player.health = Math.min(player.health + 3, 50);
+            player.health += 3);
         }
     ),
     garrote: new Card(
